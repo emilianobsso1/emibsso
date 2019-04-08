@@ -160,7 +160,7 @@ Lnueva:=nil;
  writeln(' ahora si merge');
  readln;
  Merge(v,LNueva);
- writeLn('La lista nueva quedo  ');
+ writeLn('La lista nueva quedó  ');
  recorrido(LNueva);
  readln;
 end.
