@@ -1,0 +1,61 @@
+programa Ejercicio3-5
+procesos
+  proceso JuntarFlores
+  comenzar
+    mientras (HayFlorEnLaEsquina)
+      tomarFlor
+  fin 
+  proceso Recorrido
+  comenzar
+    repetir 10
+      repetir 20
+        JuntarFlores
+        mover
+      JuntarFlores
+      derecha
+      mover
+      derecha
+      repetir 20
+        JuntarFlores
+        mover
+      JuntarFlores
+      repetir 3 
+        derecha
+      mover
+      repetir 3
+        derecha
+
+  fin
+areas
+  area1 : AreaPC(10,10,30,30)
+  area2 : AreaP(35,35,55,55)
+  area3 : AreaC(82,82,82,82)
+robots 
+  robot tipo1
+  variables
+    avI : numero
+    caI : numero
+  comenzar
+    avI := PosAv
+    caI := PosCa
+    Recorrido
+    BloquearEsquina(82,82)
+    Pos (82,82)
+    mientras(HayFlorEnLaBolsa)
+      depositarFlor
+    Pos(avI,caI)
+    LiberarEsquina(82,82)
+  fin
+
+variables 
+  robot1: tipo1
+  robot2: tipo1
+  
+comenzar 
+  AsignarArea(robot1,area1)
+  AsignarArea(robot2,area2)
+  AsignarArea(robot2,area3)
+  AsignarArea(robot1,area3)
+  Iniciar(robot1, 10, 10)
+  Iniciar(robot2, 35, 35) 
+fin
